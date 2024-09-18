@@ -14,7 +14,7 @@ protected:
 
 public:
     // Default Constructor
-    Person() {}
+    Person():id(0) {}
 
     // Parameterized Constructor
     Person(string name, string password, int id) {

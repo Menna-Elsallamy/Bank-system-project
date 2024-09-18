@@ -37,3 +37,43 @@
 	"Person.h"
 	"Validation.h"
 
+1726620005 source:g:\mygithub\bank system  project\main.cpp
+	<iostream>
+	"Person.h"
+	"Client.h"
+	"Employee.h"
+	"Admin.h"
+
+1726668595 g:\mygithub\bank system  project\include\person.h
+	<iostream>
+	<string>
+	"Validation.h"
+
+1726615033 g:\mygithub\bank system  project\include\validation.h
+	<string>
+
+1726620115 g:\mygithub\bank system  project\include\client.h
+	<string>
+	"Person.h"
+	"Validation.h"
+
+1726619810 g:\mygithub\bank system  project\include\employee.h
+	"Person.h"
+	"Validation.h"
+
+1726619810 g:\mygithub\bank system  project\include\admin.h
+	"Employee.h"
+
+1726619818 source:g:\mygithub\bank system  project\src\admin.cpp
+	"Admin.h"
+
+1726596107 source:g:\mygithub\bank system  project\src\client.cpp
+
+1726619359 source:g:\mygithub\bank system  project\src\employee.cpp
+	"Employee.h"
+
+1726596115 source:g:\mygithub\bank system  project\src\person.cpp
+
+1726615044 source:g:\mygithub\bank system  project\src\validation.cpp
+	"Validation.h"
+
