@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1726619818 source:g:\cs\routeprojectt\src\admin.cpp
+	"Admin.h"
+
+1726619810 g:\cs\routeprojectt\include\admin.h
+	"Employee.h"
+
+1726619359 source:g:\cs\routeprojectt\src\employee.cpp
+	"Employee.h"
+
+1726619810 g:\cs\routeprojectt\include\employee.h
+	"Person.h"
+	"Validation.h"
+
+1726615044 source:g:\cs\routeprojectt\src\validation.cpp
+	"Validation.h"
+
+1726615033 g:\cs\routeprojectt\include\validation.h
+	<string>
+
+1726596107 source:g:\cs\routeprojectt\src\client.cpp
+
+1726596115 source:g:\cs\routeprojectt\src\person.cpp
+
+1726617597 source:g:\cs\routeprojectt\main.cpp
+	<iostream>
+	"Person.h"
+	"Client.h"
+
+1726619351 g:\cs\routeprojectt\include\person.h
+	<iostream>
+	<string>
+	"Validation.h"
+
+1726619082 g:\cs\routeprojectt\include\client.h
+	<string>
+	"Person.h"
+	"Validation.h"
+
