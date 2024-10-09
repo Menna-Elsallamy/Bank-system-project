@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>  // Include the string library
 #include "Validation.h"  // Include the Validation class
-using namespace std;
 
 class Person
 {
@@ -30,7 +29,7 @@ public:
 			this->name = name;
 		}
 		else
-			cout << "invalid name " << endl;
+		std::	cout << "invalid name " << endl;
 
 	}
 	void setPassword(string password) {
@@ -38,7 +37,7 @@ public:
 			this->password = password;
 		}
 		else
-			cout << "invalid password..." << endl;
+		std::	cout << "invalid password..." << endl;
 	}
     void setId(int id) {
         this->id = id;
@@ -58,8 +57,8 @@ public:
     }
 
     void displayInfo(){
-     cout << "ID: " << id << endl;
-     cout << "Name: " << name << endl;
+    std:: cout << "ID: " << id << endl;
+    std:: cout << "Name: " << name << endl;
     }
 
     // Destructor

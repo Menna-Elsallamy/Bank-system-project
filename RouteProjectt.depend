@@ -37,14 +37,19 @@
 	"Person.h"
 	"Validation.h"
 
-1726620005 source:g:\mygithub\bank system  project\main.cpp
+1728088319 source:g:\mygithub\bank system  project\main.cpp
 	<iostream>
 	"Person.h"
 	"Client.h"
 	"Employee.h"
 	"Admin.h"
+	<fstream>
+	<iostream>
+	"Parser.h"
+	<iostream>
+	"Parser.h"
 
-1726668595 g:\mygithub\bank system  project\include\person.h
+1727909670 g:\mygithub\bank system  project\include\person.h
 	<iostream>
 	<string>
 	"Validation.h"
@@ -52,16 +57,23 @@
 1726615033 g:\mygithub\bank system  project\include\validation.h
 	<string>
 
-1726620115 g:\mygithub\bank system  project\include\client.h
+1728427265 g:\mygithub\bank system  project\include\client.h
 	<string>
 	"Person.h"
 	"Validation.h"
+	<fstream>
+	<vector>
 
-1726619810 g:\mygithub\bank system  project\include\employee.h
+1728427132 g:\mygithub\bank system  project\include\employee.h
+	<iostream>
+	<fstream>
 	"Person.h"
 	"Validation.h"
+	"Client.h"
 
-1726619810 g:\mygithub\bank system  project\include\admin.h
+1728086521 g:\mygithub\bank system  project\include\admin.h
+	<iostream>
+	<fstream>
 	"Employee.h"
 
 1726619818 source:g:\mygithub\bank system  project\src\admin.cpp
@@ -76,4 +88,25 @@
 
 1726615044 source:g:\mygithub\bank system  project\src\validation.cpp
 	"Validation.h"
+
+1727902637 source:g:\mygithub\bank system  project\src\parser.cpp
+	"Parser.h"
+
+1728087496 g:\mygithub\bank system  project\include\parser.h
+	"Admin.h"
+	<vector>
+	<string>
+	<sstream>
+	"Client.h"
+	"Employee.h"
+
+1727916568 source:g:\mygithub\bank system  project\src\datasourceinterface.cpp
+
+1728088328 source:g:\mygithub\bank system  project\src\filehelper.cpp
+
+1728088273 g:\mygithub\bank system  project\include\filehelper.h
+	<fstream>
+	"Parser.h"
+
+1728088328 source:g:\mygithub\bank system  project\src\filemanager.cpp
 

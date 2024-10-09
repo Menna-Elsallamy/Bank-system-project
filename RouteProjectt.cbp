@@ -37,14 +37,23 @@
 		<Unit filename="include/Admin.h" />
 		<Unit filename="include/Client.h" />
 		<Unit filename="include/Employee.h" />
+		<Unit filename="include/FileHelper.h" />
+		<Unit filename="include/Parser.h" />
 		<Unit filename="include/Person.h" />
 		<Unit filename="include/Validation.h" />
+		<Unit filename="include/dataSourceInterface.h" />
+		<Unit filename="include/fileManager.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Admin.cpp" />
 		<Unit filename="src/Client.cpp" />
 		<Unit filename="src/Employee.cpp" />
+		<Unit filename="src/FileHelper.cpp" />
+		<Unit filename="src/Parser.cpp" />
 		<Unit filename="src/Person.cpp" />
 		<Unit filename="src/Validation.cpp" />
+		<Unit filename="src/dataSourceInterface.cpp" />
+		<Unit filename="src/fileHelper.cpp" />
+		<Unit filename="src/fileManager.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

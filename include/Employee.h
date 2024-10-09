@@ -1,36 +1,78 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
+
+#include <iostream>
+#include <fstream>
 #include "Person.h"
 #include "Validation.h"
-using namespace std;
+#include "Client.h"
+
+
 class Employee : public Person {
 protected:
-double salary;
+    double salary;
+
 public:
-    Employee() :  Person(), salary(0.0) {
-    }
-    Employee(string name, string password, int id, double salary) : Person(name,  password,  id) {
-         setSalary(salary);
+    Employee() : Person(), salary(0.0) {}
+
+    Employee(string name, string password, int id, double salary)
+        : Person(name, password, id) {
+        setSalary(salary);
     }
 
-    //setters
+    // Save employee details to a file
+  void saveToFile(const string& fileName) {
+        fstream file(fileName, ios::out);
+        if (file.is_open()) {
+            file << getName() << "," << getId()<<  ","<<getPassword()<< "," << salary << endl;  // Corrected from balance to salary
+            file.close();
+        } else {
+           std:: cout << "Error: Could not open file " << fileName << endl;
+        }
+    }
+
+    // Setters
     void setSalary(double salary) {
         if (Validation::salary(salary)) {
-			this->salary = salary;
-		}
-		else
-			cout << "Salary is invalid ..." << endl;
-	}
+            this->salary = salary;
+        } else {
+          std::  cout << "Salary is invalid ..." << endl;
+        }
+    }
 
-    //getters
-    double getSalary(){
-    return salary;
- }
- //displayfunction
- void display() {
-		Person::displayInfo();
-		cout << "salary : " << salary << endl;
+    // Getters
+    double getSalary() {
+        return salary;
+    }
+
+    // Display function
+    void display() {
+        Person::displayInfo();
+       std:: cout << "Salary: " << salary << endl;
+    }
+    void addClient(Client& client) {
+		allClients.push_back(client);
+	}
+	Client* searchClient(int id) {
+		for (clIt = allClients.begin(); clIt != allClients.end(); clIt++) {
+if (clIt->getId() == id) return &(*clIt);
+		}
+		return NULL;
+	}
+	void listClient() {
+		for (clIt = allClients.begin(); clIt != allClients.end(); clIt++) {
+			clIt->display();
+			cout << "-------------------------\n";
+		}
+	}
+	void editClient(int id, string name, string password, double balance) {
+		searchClient(id)->setName(name);
+		searchClient(id)->setPassword(password);
+		searchClient(id)->setBalance(balance);
 	}
 };
+
+static vector<Employee> allEmployees;
+static vector<Employee>::iterator eIt;
 
 #endif // EMPLOYEE_H

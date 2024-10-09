@@ -3,7 +3,9 @@
 #include <string>
 #include "Person.h"
 #include "Validation.h"
-using namespace std;
+#include <fstream>
+#include <vector>
+
 class Client:public Person{
     private:
         double balance;
@@ -20,7 +22,7 @@ class Client:public Person{
 			this->balance = balance;
 		}
 		else
-			cout << "Balance is invalid ..." << endl;
+			std::cout << "Balance is invalid ..." << endl;
 	}
 	//getter
 	double getBalance() {
@@ -41,12 +43,23 @@ class Client:public Person{
 	}
 	void checkBalance() {
 
-		cout << "Balance : " << balance << endl;
+		std::cout << "Balance : " << balance << endl;
 	}
 	void display() {
 		Person::displayInfo();
-		cout << "Balance : " << balance << endl;
+		std::cout << "Balance : " << balance << endl;
 	}
+	void saveToFile(const string& fileName) {
+        fstream file(fileName, ios::out);
+        if (file.is_open()) {
+file << getName() << "," << getPassword() << "," << getId() << "," << balance << endl;
+            file.close();
+        } else {
+            std::cout << "Error: Could not open file " << fileName << endl;
+        }}
 };
+
+static vector<Client> allClients;
+static vector<Client>::iterator clIt;
 #endif // CLIENT_H
 
