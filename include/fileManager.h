@@ -3,49 +3,76 @@
 #pragma once
 #include <iostream>
 #include "DataSourceInterface.h"
-#include "FilesHelper.h"
+#include "FileHelper.h"
 using namespace std;
 
-  class FileManager : public DataSourceInterface {
+  class fileManager : public DataSourceInterface {
 private:
-	static void addClient(Client client) {
-		FilesHelper::saveClient(client);
+	 void addClient(Client client) {
+		FileHelper::saveClient(client);
 	}
-	static void addEmployee(Employee employee) {
-		FilesHelper::saveEmployee("Employees.txt", "EmployeeLastId.txt", employee);
+	 void addEmployee(Employee employee) {
+		FileHelper::saveEmployee("EmployeeData.txt", "EmployeeLastId.txt", employee);
 	}
-	static void addAdmin(Admin admin) {
-		FilesHelper::saveEmployee("Admins.txt", "AdminLastId.txt", admin);
+	 void addAdmin(Admin admin) {
+		FileHelper::saveEmployee("AdminData.txt", "AdminLastId.txt", admin);
 	}
-	 void getAllClients() {
-            vector<Client> clients = FilesHelper::getClients();
+	void getAllClients() {
+          /*  vector<Client> clients = FileHelper::getClients();
             for (Client& c : clients) {
                 c.display();
-            }
+            }*/
+           FileHelper::getClients();
         }
-
         void getAllEmployees() {
-            vector<Employee> employees = FilesHelper::getEmployees();
+          /*  vector<Employee> employees = FileHelper::getEmployees();
             for (Employee& e : employees) {
                 e.display();
-            }
+            }*/
+            FileHelper::getEmployees();
         }
 
         void getAllAdmins(){
-            vector<Admin> admins = FilesHelper::getAdmins();
+            /*vector<Admin> admins = FileHelper::getAdmins();
             for (Admin& a : admins) {
                 a.display();
-            }
+            }*/
+           FileHelper::getAdmins();
         }
 
-	static void removeAllClients() {
-		FilesHelper::clearFile("Clients.txt", "ClientLastId.txt");
+	 void removeAllClients() {
+		FileHelper::clearFile("ClientData.txt", "ClientLastId.txt");
 	}
-	static void removeAllEmployees() {
-		FilesHelper::clearFile("Employees.txt", "EmployeeLastId.txt");
+	 void removeAllEmployees() {
+		FileHelper::clearFile("EmployeeData.txt", "EmployeeLastId.txt");
 	}
-	static void removeAllAdmins() {
-		FilesHelper::clearFile("Admins.txt", "AdminLastId.txt");
+	 void removeAllAdmins() {
+		FileHelper::clearFile("AdminData.txt", "AdminLastId.txt");
 	}
+
+
+	public:
+	 void getAllData() {
+		// fileManager fm;
+        getAllClients();
+        getAllEmployees();
+        getAllAdmins();
+	}
+	 void updateClients() {
+        //fileManager fm;
+	     removeAllClients();
+		for (clIt = allClients.begin(); clIt != allClients.end(); clIt++) addClient(*clIt);
+	}
+	 void updateEmployees() {
+	     //fileManager mm;
+		removeAllEmployees();
+		for (eIt = allEmployees.begin(); eIt != allEmployees.end(); eIt++) addEmployee(*eIt);
+	}
+	 void updateAdmins() {
+	      //fileManager fm;
+		removeAllAdmins();
+		for (aIt = allAdmins.begin(); aIt != allAdmins.end(); aIt++) addAdmin(*aIt);
+	}
+
 };
 #endif // FILEMANAGER_H

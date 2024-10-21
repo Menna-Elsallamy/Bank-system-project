@@ -10,7 +10,54 @@
 
 #include <iostream>
 #include "Parser.h"
+#include "Screens.h"
 int main(){
+    Screens::runApp();
+ // Create Admin, Employee, and Client objects
+   /* Admin admin1("John", "adminPass123", 101, 6000.0);
+    Employee employee1("Jane", "empPass456", 202, 5500.0);
+    Client client1("Alice", "clientPass789", 303, 2000.0);
+
+    // Displaying details
+    std::cout << "Admin details:" << std::endl;
+    admin1.display();
+
+    std::cout << "\nEmployee details:" << std::endl;
+    employee1.display();
+
+    std::cout << "\nClient details:" << std::endl;
+    client1.display();
+
+    // Saving details to file
+    admin1.saveToFile("Admin.txt");
+    employee1.saveToFile("employee.txt");
+    client1.saveToFile("client.txt");
+
+    // Edit and display employee details
+    std::cout << "\nEditing employee details...\n";
+    employee1.setName("Jane Doe");
+    employee1.setSalary(6000);
+    employee1.display();
+
+    // Admin adding employee and listing all employees
+    std::cout << "\nAdmin adds an employee and lists all employees:\n";
+    admin1.addEmployee(employee1);
+    admin1.listEmployee();
+
+    // Client deposit and transfer
+    std::cout << "\nClient deposits money and checks balance:\n";
+    client1.deposit(500);
+    client1.checkBalance();
+
+    Client client2("Bob", "clientPass012", 404, 3000.0);
+    std::cout << "\nClient1 transfers to Client2:\n";
+    client1.transferTo(1000, client2);
+
+    std::cout << "\nClient1 new balance:" << std::endl;
+    client1.checkBalance();
+
+    std::cout << "\nClient2 new balance:" << std::endl;
+    client2.checkBalance();
 
 cout<<"hello";}
 /*int main() {
@@ -101,6 +148,6 @@ cout<<s;*/
     fileThree<<admin1.getName()<< "," <<admin1.getId()<< "," <<admin1.getSalary()<<endl;
     fileThree.close();*/
 
-    //return 0;
-//}
+    return 0;
+}
 

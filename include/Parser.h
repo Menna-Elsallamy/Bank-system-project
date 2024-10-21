@@ -10,43 +10,28 @@ using namespace std;
 
 class Parser {
 public:
-    static vector<string> split(const string& line, char separator = ',') {
-        vector<string> finalresult;
+    static vector<string> split(string line) {
+        vector<string> data;
         stringstream ss(line);
-        string part;
-        while (getline(ss, part, separator)) {
-            finalresult.push_back(part);
+        string token;
+        while (getline(ss, token,',')) {
+            data.push_back(token);
         }
-
-        return finalresult;
+        return data;
     }
-    static Client parseToClient(const string& line) {
+    static Client parseToClient(string line) {
         vector<string> clientInfo = split(line);
-
-        Client client;
-        client.setName(clientInfo[0]);
-        client.setPassword(clientInfo[1]);
-        client.setId(stoi(clientInfo[2]));
-        client.setBalance(stod(clientInfo[3]));
+        Client client(clientInfo[0],clientInfo[1],stoi(clientInfo[2]),stod(clientInfo[3]));
         return client;
     }
-     static Admin parseToAdmin(const string& line) {
+     static Admin parseToAdmin(string line) {
         vector<string> adminInfo = split(line);
-        Admin admin;
-        admin.setName(adminInfo[0]);
-        admin.setPassword(adminInfo[1]);
-        admin.setId(stoi(adminInfo[2]));
-        admin.setSalary(stod(adminInfo[3]));
+        Admin admin(adminInfo[0],adminInfo[1],stoi(adminInfo[2]),stod(adminInfo[3]));
         return admin;
     }
-   static Employee parseToEmployee(const string& line) {
+   static Employee parseToEmployee(string line) {
         vector<string> employeeInfo = split(line);
-
-        Employee employee;
-        employee.setName(employeeInfo[0]);
-        employee.setPassword(employeeInfo[1]);
-        employee.setId(stoi(employeeInfo[2]));
-        employee.setSalary(stod(employeeInfo[3]));
+        Employee employee(employeeInfo[0],employeeInfo[1],stoi(employeeInfo[2]),stod(employeeInfo[3]));
         return employee;
     }
 };

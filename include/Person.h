@@ -17,10 +17,22 @@ public:
 
     // Parameterized Constructor
     Person(string name, string password, int id) {
-        setName(name);
-        setPassword(password);
+       if (Validation::name(name)) {
+			this->name = name;
+		}
+		if (Validation::password(password)) {
+			this->password = password;
+		}
         this->id=id;
 
+    }
+      Person(string name, string password) {
+       if (Validation::name(name)) {
+			this->name = name;
+		}
+		if (Validation::password(password)) {
+			this->password = password;
+		}
     }
 
     // Setters
@@ -28,16 +40,12 @@ public:
 		if (Validation::name(name)) {
 			this->name = name;
 		}
-		else
-		std::	cout << "invalid name " << endl;
-
 	}
 	void setPassword(string password) {
 		if (Validation::password(password)) {
 			this->password = password;
 		}
-		else
-		std::	cout << "invalid password..." << endl;
+
 	}
     void setId(int id) {
         this->id = id;

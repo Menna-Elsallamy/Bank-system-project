@@ -14,15 +14,15 @@ class Client:public Person{
 	Client() : Person(), balance(0)
 	{}
 	Client(string name, string password,int id, double balance) :Person( name, password,id) {
-		setBalance(balance);
+	    if (Validation::balance(balance)) {
+			this->balance = balance;
+		}
 	}
 
 	void setBalance(double balance) {
 		if (Validation::balance(balance)) {
 			this->balance = balance;
 		}
-		else
-			std::cout << "Balance is invalid ..." << endl;
 	}
 	//getter
 	double getBalance() {

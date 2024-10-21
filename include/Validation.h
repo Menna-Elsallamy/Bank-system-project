@@ -6,7 +6,7 @@ class Validation
 {
 public:
 	static bool name(string Name) {
-		if (Name.size() < 5 || Name.size() > 20) {
+		if (Name.size() < 3 || Name.size() > 20) {
 			return false;
 		}
 		for (int i = 0; i < Name.size(); i++) {

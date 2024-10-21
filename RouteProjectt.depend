@@ -37,7 +37,7 @@
 	"Person.h"
 	"Validation.h"
 
-1728088319 source:g:\mygithub\bank system  project\main.cpp
+1729040447 source:g:\mygithub\bank system  project\main.cpp
 	<iostream>
 	"Person.h"
 	"Client.h"
@@ -48,30 +48,31 @@
 	"Parser.h"
 	<iostream>
 	"Parser.h"
+	"Screens.h"
 
-1727909670 g:\mygithub\bank system  project\include\person.h
+1729275732 g:\mygithub\bank system  project\include\person.h
 	<iostream>
 	<string>
 	"Validation.h"
 
-1726615033 g:\mygithub\bank system  project\include\validation.h
+1729530082 g:\mygithub\bank system  project\include\validation.h
 	<string>
 
-1728427265 g:\mygithub\bank system  project\include\client.h
+1729275733 g:\mygithub\bank system  project\include\client.h
 	<string>
 	"Person.h"
 	"Validation.h"
 	<fstream>
 	<vector>
 
-1728427132 g:\mygithub\bank system  project\include\employee.h
+1729531022 g:\mygithub\bank system  project\include\employee.h
 	<iostream>
 	<fstream>
 	"Person.h"
 	"Validation.h"
 	"Client.h"
 
-1728086521 g:\mygithub\bank system  project\include\admin.h
+1728485638 g:\mygithub\bank system  project\include\admin.h
 	<iostream>
 	<fstream>
 	"Employee.h"
@@ -92,7 +93,7 @@
 1727902637 source:g:\mygithub\bank system  project\src\parser.cpp
 	"Parser.h"
 
-1728087496 g:\mygithub\bank system  project\include\parser.h
+1729281087 g:\mygithub\bank system  project\include\parser.h
 	"Admin.h"
 	<vector>
 	<string>
@@ -104,9 +105,66 @@
 
 1728088328 source:g:\mygithub\bank system  project\src\filehelper.cpp
 
-1728088273 g:\mygithub\bank system  project\include\filehelper.h
+1729281345 g:\mygithub\bank system  project\include\filehelper.h
 	<fstream>
 	"Parser.h"
 
-1728088328 source:g:\mygithub\bank system  project\src\filemanager.cpp
+1729286242 source:g:\mygithub\bank system  project\src\filemanager.cpp
+	"fileHelper.h"
+
+1729039664 source:g:\mygithub\bank system  project\src\clientmanager.cpp
+
+1729040419 source:g:\mygithub\bank system  project\src\adminmanager.cpp
+
+1729040419 source:g:\mygithub\bank system  project\src\employeemanager.cpp
+
+1729040419 source:g:\mygithub\bank system  project\src\screens.cpp
+
+1729275733 source:g:\mygithub\bank system  project\src\filldata.cpp
+
+1729529473 g:\mygithub\bank system  project\include\screens.h
+	<iostream>
+	<stdlib.h>
+	<chrono>
+	<thread>
+	<windows.h>
+	"AdminManager.h"
+	"fileManager.h"
+
+1729531577 g:\mygithub\bank system  project\include\adminmanager.h
+	"FileHelper.h"
+	"fileManager.h"
+	"FillData.h"
+	"EmployeeManager.h"
+	"clientManager.h"
+
+1729529073 g:\mygithub\bank system  project\include\filemanager.h
+	<iostream>
+	"DataSourceInterface.h"
+	"FileHelper.h"
+
+1727916352 g:\mygithub\bank system  project\include\datasourceinterface.h
+	"Admin.h"
+	"Client.h"
+	<iostream>
+	<vector>
+
+1729530198 g:\mygithub\bank system  project\include\filldata.h
+	"Validation.h"
+
+1729459026 g:\mygithub\bank system  project\include\employeemanager.h
+	<iostream>
+	<string>
+	<vector>
+	"Client.h"
+	"Employee.h"
+	"Admin.h"
+	<fstream>
+	"FillData.h"
+	"fileManager.h"
+	"clientManager.h"
+
+1729529234 g:\mygithub\bank system  project\include\clientmanager.h
+	"Person.h"
+	"fileManager.h"
 

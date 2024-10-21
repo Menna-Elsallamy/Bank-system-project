@@ -3,44 +3,51 @@
 #pragma once
 #include <fstream>
 #include "Parser.h"
-
-class FilesHelper {
+class FileHelper {
 private:
-	static void saveLast(string fileName, int id) {
+	static void saveLastID(string lastIdFile, int id) {
 		ofstream file;
-		file.open(fileName);
+		file.open(lastIdFile);
 		file << id;
 		file.close();
 	}
 public:
-	static int getLast(string fileName) {
+	static int getLastID(string lastIdFile) {
 		ifstream file;
-		file.open(fileName);
+		file.open(lastIdFile);
 		int id;
 		file >> id;
 		file.close();
 		return id;
 	}
-	static void saveClient(Client c) {
-		int id = getLast("ClientLastId.txt");
-		fstream file;
-		file.open("Clients.txt", ios::app);
-		file << id + 1 << '&' << c.getName() << '&' << c.getPassword() << '&' << c.getBalance() << "\n";
+	static void saveClient(Client client) {
+		int id = getLastID("ClientLastId.txt");
+		ofstream file;
+		file.open("ClientData.txt", ios::app);
+		file << client.getName() << ',' << client.getPassword() << ',' << id + 1 << ',' << client.getBalance() << "\n";
 		file.close();
-		saveLast("ClientLastId.txt", id + 1);
+		saveLastID("ClientLastId.txt", id + 1);
 	}
-	static void saveEmployee(string fileName, string lastIdFile, Employee e) {
-		int id = getLast(lastIdFile);
-		fstream file;
-		file.open(fileName, ios::app);
-		file << id + 1 << '&' << e.getName() << '&' << e.getPassword() << '&' << e.getSalary() << "\n";
+	static void saveEmployee(string dataFile, string lastIdFile, Employee employee) {
+		int id = getLastID(lastIdFile);
+		ofstream file;
+		file.open(dataFile, ios::app);
+		file <<  employee.getName() << ',' << employee.getPassword()<< ','  <<id + 1 << ',' << employee.getSalary() << "\n";
 		file.close();
-		saveLast(lastIdFile, id + 1);
+		saveLastID(lastIdFile, id + 1);
+	}
+	static void saveAdmin(string dataFile, string lastIdFile, Admin admin) {
+		int id = getLastID("AdminLastId.txt");
+		ofstream file;
+		file.open(dataFile, ios::app);
+		file << admin.getName() << ',' << admin.getPassword() << ',' << id + 1 << ',' << admin.getSalary() << "\n";
+		file.close();
+		saveLastID(lastIdFile, id + 1);
 	}
 	static void getClients() {
 		string line;
 		ifstream file;
-		file.open("Clients.txt");
+		file.open("ClientData.txt");
 		while (getline(file, line)) {
 			Client c = Parser::parseToClient(line);
 			allClients.push_back(c);
@@ -50,7 +57,7 @@ public:
 	static void getEmployees() {
 		string line;
 		ifstream file;
-		file.open("Employees.txt");
+		file.open("EmployeeData.txt");
 		while (getline(file, line)) {
 			Employee e = Parser::parseToEmployee(line);
 			allEmployees.push_back(e);
@@ -60,21 +67,21 @@ public:
 	static void getAdmins() {
 		string line;
 		ifstream file;
-		file.open("Admins.txt");
+		file.open("AdminData.txt");
 		while (getline(file, line)) {
 			Admin a = Parser::parseToAdmin(line);
 			allAdmins.push_back(a);
 		}
 		file.close();
 	}
-	static void clearFile(string fileName, string lastIdFile) {
-		fstream file1, file2;
-		file1.open(fileName, ios::out);
-		file1.close();
-		file2.open(lastIdFile, ios::out);
-		file2.close();
+	static void clearFile(string datafile, string lastIdFile) {
+		ofstream clearFile, zeroID;
+		clearFile.open(datafile,ios::trunc);
+        clearFile.close();
+
+        zeroID.open(lastIdFile);
+        zeroID<<0;
+        zeroID.close();
 	}
 };
-
-
 #endif // FILEHELPER_H

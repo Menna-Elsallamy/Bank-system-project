@@ -11,17 +11,24 @@
 class Employee : public Person {
 protected:
     double salary;
-
 public:
     Employee() : Person(), salary(0.0) {}
 
     Employee(string name, string password, int id, double salary)
         : Person(name, password, id) {
-        setSalary(salary);
+         if (Validation::salary(salary)) {
+            this->salary = salary;
+        }
     }
 
+    Employee(string name, string password, double salary)
+        : Person(name, password) {
+         if (Validation::salary(salary)) {
+            this->salary = salary;
+        }
+    }
     // Save employee details to a file
-  void saveToFile(const string& fileName) {
+ /* void saveToFile(const string& fileName) {
         fstream file(fileName, ios::out);
         if (file.is_open()) {
             file << getName() << "," << getId()<<  ","<<getPassword()<< "," << salary << endl;  // Corrected from balance to salary
@@ -30,13 +37,11 @@ public:
            std:: cout << "Error: Could not open file " << fileName << endl;
         }
     }
-
+*/
     // Setters
     void setSalary(double salary) {
         if (Validation::salary(salary)) {
             this->salary = salary;
-        } else {
-          std::  cout << "Salary is invalid ..." << endl;
         }
     }
 

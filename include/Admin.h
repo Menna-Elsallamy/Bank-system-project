@@ -18,7 +18,7 @@ public:
  void saveToFile(const string& fileName) {
         fstream file(fileName, ios::out);
         if (file.is_open()) {
-            file << getName() << "," << getId()<<  ","<<getPassword()<< "," << salary << endl;  // Corrected from balance to salary
+            file << getName() << "," << getId()<<  ","<<getPassword()<< "," << salary << endl;
             file.close();
         } else {
            std:: cout << "Error: Could not open file " << fileName << endl;
